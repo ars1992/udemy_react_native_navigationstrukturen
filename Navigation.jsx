@@ -9,18 +9,16 @@ import * as Icon from '@expo/vector-icons';
 const Tap = createBottomTabNavigator()
 const Stack = createNativeStackNavigator()
 
-export default function HomeStack(){
+function HomeStack() {
     return (
-        <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name='Home' component={HomeScreen}/>
-                <Stack.Screen name='Friend' component={FriendScreen}/>
-            </Stack.Navigator>
-        </NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name='HomeScreen' component={HomeScreen} />
+            <Stack.Screen name='Friend' component={FriendScreen} />
+        </Stack.Navigator>
     )
 }
 
- function Navigation() {
+export default function Navigation() {
     return (
         <NavigationContainer>
             <Tap.Navigator screenOptions={({ route }) => {
@@ -41,7 +39,7 @@ export default function HomeStack(){
                     }
                 }
             }}>
-                <Tap.Screen name='Home' component={HomeScreen} options={{
+                <Tap.Screen name='Home' component={HomeStack} options={{
                     title: "Freunde",
                 }} />
                 <Tap.Screen name='Settings' component={SettingsScreen} options={{
