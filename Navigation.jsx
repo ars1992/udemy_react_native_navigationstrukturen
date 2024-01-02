@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen'; './screens/HomeScreen';
 import SettingsScreen from './screens/SettingsScreen';
-import * as Icon  from '@expo/vector-icons';
+import * as Icon from '@expo/vector-icons';
 
 const Tap = createBottomTabNavigator()
 
@@ -10,18 +10,25 @@ const Tap = createBottomTabNavigator()
 export default function Navigation() {
     return (
         <NavigationContainer>
-            <Tap.Navigator>
+            <Tap.Navigator screenOptions={({ route }) => {
+                return {
+                    tabBarIcon: ({ focused, size, color }) => {
+                        let icon;
+                        if (route.name === "Home") {
+                            icon = focused ? "home" : "home-outline"
+                        }
+                        if (route.name === "Settings") {
+                            icon = focused ? "settings" : "settings-outline"
+                        }
+                        return <Icon.Ionicons name={icon} size={size} color={color} />
+                    }
+                }
+            }}>
                 <Tap.Screen name='Home' component={HomeScreen} options={{
                     title: "Freunde",
-                    tabBarIcon: ({focused, size, color}) => {
-                        return <Icon.Ionicons name={focused ? "home" : "home-outline"} size={size} color={color} />
-                    }
                 }} />
                 <Tap.Screen name='Settings' component={SettingsScreen} options={{
                     title: "Einstellunngen",
-                    tabBarIcon: ({focused, size, color}) => {
-                        return <Icon.Ionicons name={focused ? "settings" : "settings-outline"} size={size} color={color} />
-                    }
                 }} />
             </Tap.Navigator>
         </NavigationContainer>
