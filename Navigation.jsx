@@ -11,8 +11,8 @@ const Stack = createNativeStackNavigator()
 
 function HomeStack() {
     return (
-        <Stack.Navigator>
-            <Stack.Screen name='HomeScreen' component={HomeScreen} />
+        <Stack.Navigator >
+            <Stack.Screen name='HomeScreen' component={HomeScreen} options={{headerShown: false}}/>
             <Stack.Screen name='Friend' component={FriendScreen} />
         </Stack.Navigator>
     )
@@ -27,6 +27,7 @@ export default function Navigation() {
                     tabBarStyle: {
                         backgroundColor: "orange",
                     },
+                    headerShown: false,
                     tabBarIcon: ({ focused, size, color }) => {
                         let icon;
                         if (route.name === "Home") {
