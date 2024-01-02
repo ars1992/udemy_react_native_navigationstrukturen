@@ -13,14 +13,14 @@ export default function Navigation() {
             <Tap.Navigator>
                 <Tap.Screen name='Home' component={HomeScreen} options={{
                     title: "Freunde",
-                    tabBarIcon: ({size, color}) => {
-                        return <Icon.Ionicons name="home" size={size} color={color} />
+                    tabBarIcon: ({focused, size, color}) => {
+                        return <Icon.Ionicons name={focused ? "home" : "home-outline"} size={size} color={color} />
                     }
                 }} />
                 <Tap.Screen name='Settings' component={SettingsScreen} options={{
                     title: "Einstellunngen",
-                    tabBarIcon: ({size, color}) => {
-                        return <Icon.Ionicons name="settings" size={size} color={color} />
+                    tabBarIcon: ({focused, size, color}) => {
+                        return <Icon.Ionicons name={focused ? "settings" : "settings-outline"} size={size} color={color} />
                     }
                 }} />
             </Tap.Navigator>
