@@ -1,11 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen'; './screens/HomeScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import * as Icon from '@expo/vector-icons';
 
 const Tap = createBottomTabNavigator()
-
+const Stack = createNativeStackNavigator()
 
 export default function Navigation() {
     return (
