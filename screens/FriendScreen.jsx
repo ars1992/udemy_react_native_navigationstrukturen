@@ -4,7 +4,7 @@ export default function FriendScreen({navigation}) {
     return (
         <View style={styles.container}>
             <Text>Deteils</Text>
-            <Button title='Gehe zu Zurück' onPress={() => navigation.navigate("Home")} />
+            <Button title='Gehe zu Zurück' onPress={() => navigation.goBack()} />
         </View>
     )
 }
