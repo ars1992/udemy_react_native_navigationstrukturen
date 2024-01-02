@@ -12,6 +12,10 @@ export default function Navigation() {
         <NavigationContainer>
             <Tap.Navigator screenOptions={({ route }) => {
                 return {
+                    tabBarActiveTintColor: "green",
+                    tabBarStyle: {
+                        backgroundColor: "orange",
+                    },
                     tabBarIcon: ({ focused, size, color }) => {
                         let icon;
                         if (route.name === "Home") {
