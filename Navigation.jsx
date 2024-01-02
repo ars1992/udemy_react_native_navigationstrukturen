@@ -7,12 +7,16 @@ const Tap = createBottomTabNavigator()
 
 
 export default function Navigation() {
-  return (
-    <NavigationContainer>
-      <Tap.Navigator>
-        <Tap.Screen name='Freunde' component={HomeScreen}/>
-        <Tap.Screen name='Einstellungen' component={SettingsScreen}/>
-      </Tap.Navigator>
-    </NavigationContainer>
-  )
+    return (
+        <NavigationContainer>
+            <Tap.Navigator>
+                <Tap.Screen name='Home' component={HomeScreen} options={{
+                    title: "Freunde"
+                }} />
+                <Tap.Screen name='Settings' component={SettingsScreen} options={{
+                    title: "Einstellunngen"
+                }} />
+            </Tap.Navigator>
+        </NavigationContainer>
+    )
 }
