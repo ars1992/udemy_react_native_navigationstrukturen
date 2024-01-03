@@ -1,4 +1,5 @@
-import { Button, StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
+import FriendListItem from '../components/FriendListItem'
 
 export default function HomeScreen({ navigation }) {
     return (
@@ -10,10 +11,9 @@ export default function HomeScreen({ navigation }) {
                     { name: "3" },
                     { name: "4" },
                 ]}
-                renderItem={({ item }) => {
-                    return <Button title={`Gehe zu ${item.name}`} onPress={() =>
-                        navigation.navigate("Friend", { name: item.name })} />
-                }}
+                renderItem={({ item }) => 
+                    <FriendListItem friend={item} onPress={() => navigation.navigate("Friend", {name: item.name})} />
+                }
                 keyExtractor={(item) => item.name} />
         </View>
     )
