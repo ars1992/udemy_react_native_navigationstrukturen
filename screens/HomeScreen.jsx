@@ -14,7 +14,9 @@ export default function HomeScreen({ navigation }) {
                 renderItem={({ item }) => 
                     <FriendListItem friend={item} onPress={() => navigation.navigate("Friend", {name: item.name})} />
                 }
-                keyExtractor={(item) => item.name} />
+                keyExtractor={(item) => item.name}
+                ItemSeparatorComponent={<View style={styles.listSeperator}/>}
+                />
         </View>
     )
 }
@@ -28,4 +30,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingTop: 80,
     },
+    listSeperator: {
+        height: StyleSheet.hairlineWidth, 
+        backgroundColor: 'orange'
+    }
 });
