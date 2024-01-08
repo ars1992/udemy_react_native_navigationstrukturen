@@ -1,19 +1,24 @@
+import { useState } from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 import FriendListItem from '../components/FriendListItem'
 
+const dummyData = [
+    { name: "1", lastName: "a", email: "test1a@test.de"},
+    { name: "2", lastName: "b", email: "test2b@test.de"},
+    { name: "3", lastName: "c", email: "test3c@test.de"},
+    { name: "4", lastName: "d", email: "test4d@test.de"},
+    { name: "5", lastName: "e", email: "test5e@test.de"},
+    { name: "6", lastName: "f", email: "test6f@test.de"},
+    
+]
+
 export default function HomeScreen({ navigation }) {
+    const [data, setData] = useState(dummyData)
+
     return (
         <View style={styles.container}>
             <FlatList
-                data={[
-                    { name: "1", lastName: "a", email: "test1a@test.de"},
-                    { name: "2", lastName: "b", email: "test2b@test.de"},
-                    { name: "3", lastName: "c", email: "test3c@test.de"},
-                    { name: "4", lastName: "d", email: "test4d@test.de"},
-                    { name: "5", lastName: "e", email: "test5e@test.de"},
-                    { name: "6", lastName: "f", email: "test6f@test.de"},
-                    
-                ]}
+                data={data}
                 renderItem={({ item }) => 
                     <FriendListItem friend={item} onPress={() => navigation.navigate("Friend", {friend: item})} />
                 }
