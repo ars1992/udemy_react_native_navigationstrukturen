@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     section: {
         backgroundColor: 'whitesmoke',
         borderBottomWidth: StyleSheet.hairlineWidth,
-        borderColor: 'ligthgray',
+        borderColor: 'gray',
         fontSize: 18,
         padding: 5,
     }
