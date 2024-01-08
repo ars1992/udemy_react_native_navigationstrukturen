@@ -1,20 +1,26 @@
 import { Image, StyleSheet, Text, ScrollView } from 'react-native';
-import {Dimensions} from 'react-native';
+import { useWindowDimensions } from 'react-native';
 
 
-export default function FriendScreen({navigation, route}) {
+export default function FriendScreen({ navigation, route }) {
     const { name } = route.params
+    const { height, width } = useWindowDimensions();
+
     return (
         <ScrollView contentContainerStyle={styles.container} style={styles.scrollView}>
             <Text>Deteils</Text>
-            <Image source={require("../assets/icon.png")} style={styles.img}/>
+            <Image source={require("../assets/icon.png")} style={
+                {
+                    width: width * 80 / 100,
+                    height: width * 80 / 100
+                }
+            }
+            />
             <Text>{name}</Text>
         </ScrollView>
     )
 }
 
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
@@ -22,10 +28,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    img: {
-        width: windowWidth * 80 / 100,
-        height: windowWidth * 80 / 100,
     },
     scrollView: {
         backgroundColor: 'black',
