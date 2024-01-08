@@ -3,7 +3,7 @@ import { useWindowDimensions } from 'react-native';
 
 
 export default function FriendScreen({ navigation, route }) {
-    const { name } = route.params
+    const { friend } = route.params
     const { height, width } = useWindowDimensions();
 
     return (
@@ -16,7 +16,8 @@ export default function FriendScreen({ navigation, route }) {
                 }
             }
             />
-            <Text>{name}</Text>
+            <Text>Name: {friend.name} {friend.lastName}</Text>
+            <Text>Email: {friend.email}</Text>
         </ScrollView>
     )
 }
