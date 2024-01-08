@@ -1,13 +1,23 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, ScrollView } from 'react-native';
 
 export default function FriendScreen({navigation, route}) {
     const { name } = route.params
     return (
-        <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container} style={styles.scrollView}>
             <Text>Deteils</Text>
+            <Image source={require("../assets/icon.png")} style={styles.img}/>
             <Text>{name}</Text>
-            <Button title='Gehe zu Zurück' onPress={() => navigation.goBack()} />
-        </View>
+
+            <Text>Deteils</Text>
+            <Image source={require("../assets/icon.png")} style={styles.img}/>
+            <Text>{name}</Text>
+            <Text>Deteils</Text>
+            <Image source={require("../assets/icon.png")} style={styles.img}/>
+            <Text>{name}</Text>
+            <Text>Deteils</Text>
+            <Image source={require("../assets/icon.png")} style={styles.img}/>
+            <Text>{name}</Text>
+        </ScrollView>
     )
 }
 
@@ -19,4 +29,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    img: {
+        width: 260,
+        height: 260,
+    },
+    scrollView: {
+        backgroundColor: 'black',
+    }
 });
