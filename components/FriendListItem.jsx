@@ -6,7 +6,7 @@ export default function FriendListItem({ friend, onPress }) {
         <Pressable onPress={onPress} style={styles.container}>
             <Image source={require("../assets/icon.png")} style={styles.img} />
             <View style={styles.info}>
-                <Text style={styles.name} >{friend.name} {friend.lastName}</Text>
+                <Text style={styles.name} >{friend.name.first} {friend.name.last}</Text>
                 <Text style={styles.email} >{friend.email}</Text>
             </View>
         </Pressable>

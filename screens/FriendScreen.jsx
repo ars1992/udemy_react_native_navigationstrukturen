@@ -16,7 +16,7 @@ export default function FriendScreen({ navigation, route }) {
                 }
             }
             />
-            <Text>Name: {friend.name} {friend.lastName}</Text>
+            <Text>Name: {friend.name.first} {friend.name.last}</Text>
             <Text>Email: {friend.email}</Text>
         </ScrollView>
     )

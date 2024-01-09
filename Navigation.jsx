@@ -14,8 +14,8 @@ function HomeStack() {
         <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: "orange" } }}>
             <Stack.Screen name='HomeScreen' component={HomeScreen} options={{ headerShown: false }} />
             <Stack.Screen name='Friend' component={FriendScreen} options={({ route }) => {
-                const {name, lastName} = route.params.friend
-                return { title: `${name} ${lastName}` }
+                const {first, last} = route.params.friend.name
+                return { title: `${first} ${last}` }
             }} />
         </Stack.Navigator>
     )
