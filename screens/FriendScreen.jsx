@@ -9,7 +9,7 @@ export default function FriendScreen({ navigation, route }) {
     return (
         <ScrollView contentContainerStyle={styles.container} style={styles.scrollView}>
             <Text>Deteils</Text>
-            <Image source={require("../assets/icon.png")} style={
+            <Image source={{uri: friend.picture.large}} style={
                 {
                     width: width * 80 / 100,
                     height: width * 80 / 100

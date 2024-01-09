@@ -4,7 +4,7 @@ import { Image, StyleSheet, Text, Pressable, View } from 'react-native';
 export default function FriendListItem({ friend, onPress }) {
     return (
         <Pressable onPress={onPress} style={styles.container}>
-            <Image source={require("../assets/icon.png")} style={styles.img} />
+            <Image source={{uri: friend.picture.thumbnail}} style={styles.img} />
             <View style={styles.info}>
                 <Text style={styles.name} >{friend.name.first} {friend.name.last}</Text>
                 <Text style={styles.email} >{friend.email}</Text>
