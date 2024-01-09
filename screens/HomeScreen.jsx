@@ -10,9 +10,13 @@ export default function HomeScreen({ navigation }) {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch('https://randomuser.me/api?results=30');
-            const jsonRespons = await response.json();
-            setData(jsonRespons.results);
+            try {
+                const response = await fetch('https://randomuser.me/api?results=30');
+                const jsonRespons = await response.json();
+                setData(jsonRespons.results);
+            } catch(error){
+                alert("Fehler beim Laden")
+            }
             setLoading(false)
         }
         fetchData();
